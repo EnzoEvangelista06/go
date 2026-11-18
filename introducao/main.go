@@ -1,19 +1,15 @@
-// Nada pode vir antes da declaração do pacote.
+// o pacote main não pode ser importado. Ele é a base, utilizado apenas para criar executáveis!
 package main
 
 import (
-	// renomeação
-	meuPacote "encoding/json"
-	// Utilizando o ".", é como se o pacote fosse "incorporado" em nosso sistema.
-	// dot import --> não recomendado
-	. "fmt"
-
-	// Isso existe. Ele não entra no escopo do nosso pacote atual.
-	_ "fmt"
+	"fmt"
+	"introducao/pacote"
 )
 
 func main() {
-	// fmt.Println("Olá, mundo!")
-	Println("Hello, world!")
-	meuPacote.Marshal()
+	fmt.Println("Hello, world!")
+
+	fmt.Println(pacote.Bar)
+	fmt.Println(pacote.Foo)
+	pacote.PrintMinha()
 }
